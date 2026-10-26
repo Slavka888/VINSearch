@@ -29,3 +29,26 @@ def rank_offers(compatible_parts, offers):
             candidates.append(offer)
 
     return sorted(candidates, key=lambda offer: (offer["price"], offer["delivery_days"], offer["offer_id"]))
+
+
+def check_request(request):
+    errors = []
+    if not request.get("customer_id"):
+        errors.append("не указан покупатель")
+
+    vin = str(request.get("vin", "")).strip().upper()
+    if len(vin) != 17 or any(ch not in "ABCDEFGHJKLMNPRSTUVWXYZ0123456789" for ch in vin):
+        errors.append("VIN должен содержать 17 допустимых символов")
+
+    if not str(request.get("part_group", "")).strip():
+        errors.append("не указан требуемый узел")
+
+    return errors
+
+
+def find_vehicle(vin, vehicles):
+    for vehicle in vehicles:
+        if vehicle["vin"] == vin:
+            return vehicle
+
+    return None
