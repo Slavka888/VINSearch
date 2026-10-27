@@ -1,0 +1,30 @@
+{
+  "customers": [{"customer_id": "C-001", "name": "Демонстрационный покупатель", "contact": "demo@example.invalid"}],
+  "vehicles": [{"vehicle_id": "V-001", "vin": "WVWZZZ1JZXW000001", "make": "Учебная марка", "model": "Модель А", "configuration": "Комплектация 1"}],
+  "requests": [
+    {"request_id": "R-001", "customer_id": "C-001", "vehicle_id": "V-001", "vin": "WVWZZZ1JZXW000001", "part_group": "фильтр", "received_at": "2026-10-15T09:00:00"},
+    {"request_id": "R-002", "customer_id": "C-001", "vehicle_id": "V-001", "vin": "НЕИЗВЕСТНО", "part_group": "фильтр", "received_at": "2026-10-15T09:01:00"},
+    {"request_id": "R-003", "customer_id": "C-001", "vehicle_id": "V-001", "vin": "WVWZZZ1JZXW000001", "part_group": "щетка стеклоочистителя", "received_at": "2026-10-15T09:02:00"},
+    {"request_id": "R-004", "customer_id": "C-001", "vehicle_id": "V-001", "vin": "WVWZZZ1JZXW000001", "part_group": "тормозной диск", "received_at": "2026-10-15T09:03:00"}
+  ],
+  "parts": [
+    {"part_id": "P-001", "article": "DEMO-F101", "name": "Фильтр А", "part_group": "фильтр"},
+    {"part_id": "P-002", "article": "DEMO-F102", "name": "Фильтр Б", "part_group": "фильтр"},
+    {"part_id": "P-003", "article": "DEMO-D201", "name": "Диск", "part_group": "тормозной диск"},
+    {"part_id": "P-004", "article": "DEMO-D202", "name": "Проверенный аналог диска", "part_group": "тормозной диск"}
+  ],
+  "compatibilities": [
+    {"compatibility_id": "K-001", "vehicle_id": "V-001", "part_id": "P-001", "basis": "учебная запись каталога 1"},
+    {"compatibility_id": "K-002", "vehicle_id": "V-001", "part_id": "P-002", "basis": "учебная запись каталога 2"},
+    {"compatibility_id": "K-003", "vehicle_id": "V-001", "part_id": "P-003", "basis": "учебная запись каталога 3"}
+  ],
+  "analogs": [{"analog_id": "A-001", "original_part_id": "P-003", "replacement_part_id": "P-004", "verified": true, "basis": "учебное подтверждение применимости A-001"}],
+  "suppliers": [{"supplier_id": "S-001", "name": "Демонстрационный поставщик 1"}, {"supplier_id": "S-002", "name": "Демонстрационный поставщик 2"}],
+  "offers": [
+    {"offer_id": "O-001", "supplier_id": "S-001", "part_id": "P-001", "price": 1250, "stock": 4, "delivery_days": 2, "checked_at": "2026-10-15T08:55:00"},
+    {"offer_id": "O-002", "supplier_id": "S-002", "part_id": "P-002", "price": 1100, "stock": 2, "delivery_days": 4, "checked_at": "2026-10-15T08:50:00"},
+    {"offer_id": "O-003", "supplier_id": "S-002", "part_id": "P-001", "price": 900, "stock": 0, "delivery_days": 1, "checked_at": "2026-10-15T08:50:00"},
+    {"offer_id": "O-004", "supplier_id": "S-001", "part_id": "P-004", "price": 2450, "stock": 1, "delivery_days": 3, "checked_at": "2026-10-15T08:55:00"}
+  ],
+  "selections": []
+}
